@@ -1,0 +1,15 @@
+@use "../variables" as vars;
+@use "../mixins" as mixins;
+
+.navbar {
+  width: 100%;
+  max-width: vars.$max-width;
+  height: vars.$nav-height;
+
+  background-color: vars.$clr-primary;
+
+  @include mixins.flexy();
+
+  padding-inline: vars.$padding-x;
+  margin: 0 auto;
+}

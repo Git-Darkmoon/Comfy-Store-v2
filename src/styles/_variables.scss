@@ -1,0 +1,35 @@
+// Colors
+
+$clr-white: #fafafa;
+$clr-black: #212121;
+$clr-primary: #bb9457;
+$clr-secondary: #fe4a49; //#6c969d
+
+// Transitions
+$transition_duration: 150ms;
+$transition_function: cubic-bezier(0, 0, 0.2, 1);
+
+// Typography
+$fs-0: clamp(0.875rem, 0.8471rem + 0.1274vi, 1rem);
+$fs-1: clamp(1.1664rem, 1.1292rem + 0.1698vi, 1.333rem);
+$fs-2: clamp(1.5548rem, 1.5053rem + 0.2264vi, 1.7769rem);
+$fs-3: clamp(2.0725rem, 2.0065rem + 0.3017vi, 2.3686rem);
+$fs-4: clamp(2.7627rem, 2.6747rem + 0.4022vi, 3.1573rem);
+$fs-5: clamp(3.6826rem, 3.5654rem + 0.5361vi, 4.2087rem);
+
+// Spacing
+$gutter-2xs: clamp(0.4375rem, 0.4236rem + 0.0637vi, 0.5rem);
+$gutter-xs: clamp(0.6875rem, 0.6736rem + 0.0637vi, 0.75rem);
+$gutter-s: clamp(0.875rem, 0.8471rem + 0.1274vi, 1rem);
+$gutter-m: clamp(1.3125rem, 1.2707rem + 0.1911vi, 1.5rem);
+$gutter-l: clamp(1.75rem, 1.6943rem + 0.2548vi, 2rem);
+$gutter-xl: clamp(2.625rem, 2.5414rem + 0.3822vi, 3rem);
+$gutter-2xl: clamp(3.5rem, 3.3885rem + 0.5096vi, 4rem);
+
+$padding-x: $gutter-l;
+
+// Dimensions
+$nav-height: 4.5rem;
+
+// Breakpoints
+$max-width: 1440px;
