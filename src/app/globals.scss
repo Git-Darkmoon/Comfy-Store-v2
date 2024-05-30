@@ -1,4 +1,28 @@
 @use "../styles/normalize";
+@use "../styles/variables" as vars;
 @use "../styles/components/Navbar.scss";
 @use "../styles/components/Hero.scss";
 @use "../styles/components/Slider.scss";
+
+/* total width */
+body::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.5rem;
+}
+
+/* background of the scrollbar except button or resizer */
+body::-webkit-scrollbar-track {
+  background-color: vars.$clr-white;
+}
+
+/* scrollbar itself */
+body::-webkit-scrollbar-thumb {
+  background-color: vars.$clr-primary;
+  border-radius: 1rem;
+  border: 0.3rem solid transparent;
+}
+
+/* set button(top and bottom of the scrollbar) */
+body::-webkit-scrollbar-button {
+  display: none;
+}
