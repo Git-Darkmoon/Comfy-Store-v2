@@ -1,5 +1,5 @@
-import Hero from "@/components/Hero"
-import Slider from "@/components/Slider"
+import Hero from "@/components/Home/Hero"
+import Slider from "@/components/Home/Slider"
 
 function Home() {
   return (
