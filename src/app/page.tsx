@@ -1,4 +1,12 @@
+import Hero from "@/components/Hero"
+import Slider from "@/components/Slider"
+
 function Home() {
-  return <div>This is the home page</div>
+  return (
+    <>
+      <Hero />
+      <Slider />
+    </>
+  )
 }
 export default Home

@@ -18,8 +18,6 @@ $fs-4: clamp(2.7627rem, 2.6747rem + 0.4022vi, 3.1573rem);
 $fs-5: clamp(3.6826rem, 3.5654rem + 0.5361vi, 4.2087rem);
 
 // Spacing
-$gutter-2xs: clamp(0.4375rem, 0.4236rem + 0.0637vi, 0.5rem);
-$gutter-xs: clamp(0.6875rem, 0.6736rem + 0.0637vi, 0.75rem);
 $gutter-s: clamp(0.875rem, 0.8471rem + 0.1274vi, 1rem);
 $gutter-m: clamp(1.3125rem, 1.2707rem + 0.1911vi, 1.5rem);
 $gutter-l: clamp(1.75rem, 1.6943rem + 0.2548vi, 2rem);
@@ -33,3 +31,13 @@ $nav-height: 4.5rem;
 
 // Breakpoints
 $max-width: 1440px;
+
+// Shadows
+
+$shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+$shadow-active: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+  0 8px 10px -6px rgb(0 0 0 / 0.1);
+
+// Borders
+
+$border-radius: 0.2rem;

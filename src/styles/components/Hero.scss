@@ -1,0 +1,61 @@
+@use "../variables" as vars;
+@use "../mixins" as mixins;
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - vars.$nav-height);
+
+  @include mixins.flexy(center, center);
+}
+
+.hero__img {
+  width: 100%;
+  height: calc(100vh - vars.$nav-height);
+  max-height: 1080px;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+
+  user-select: none;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: inherit;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.hero__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  user-select: none;
+  z-index: 2;
+}
+
+.hero__title {
+  color: vars.$clr-white;
+  font-size: vars.$fs-3;
+  border: 2px solid vars.$clr-white;
+  padding-inline: vars.$gutter-m;
+  text-transform: uppercase;
+  cursor: pointer;
+  @include mixins.my_transition(color, border, background-color);
+}
+
+.hero__title:hover {
+  color: vars.$clr-primary;
+  border-color: vars.$clr-primary;
+  background-color: vars.$clr-white;
+}
+
+.hero__subtitle {
+  color: vars.$clr-white;
+  margin-bottom: 3px;
+}

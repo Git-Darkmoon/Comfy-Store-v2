@@ -13,3 +13,17 @@ html {
 body {
   background-color: vars.$clr-white;
 }
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
