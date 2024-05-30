@@ -1,2 +1,55 @@
 @use "../variables" as vars;
 @use "../mixins" as mixins;
+
+$carousel__item--width: 240px;
+$carousel__item--height: 100px;
+
+$carousel__speed: 20s;
+$carousel__number-of-items: 6;
+
+.carousel {
+  width: 95%;
+  max-width: 1536px;
+  margin-inline: auto;
+  position: relative;
+  height: $carousel__item--height;
+  @include mixins.flexy(center, center);
+  gap: vars.$gutter-m;
+  overflow: hidden;
+  background-color: #f0f0f0;
+
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1) 15%,
+    rgba(0, 0, 0, 1) 85%,
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.carousel__item {
+  width: $carousel__item--width;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  @include mixins.flexy(center, center);
+  position: absolute;
+  left: max(calc($carousel__item--width * $carousel__number-of-items), 100%);
+  animation: scrollLeft $carousel__speed linear infinite;
+}
+
+@for $i from 1 through $carousel__number-of-items {
+  .carousel__item:nth-child(#{$i}) {
+    animation-delay: calc(
+      $carousel__speed /
+        $carousel__number-of-items *
+        ($carousel__number-of-items - $i) *
+        -1
+    );
+  }
+}
+
+@keyframes scrollLeft {
+  to {
+    left: calc($carousel__item--width * -1);
+  }
+}
