@@ -23,7 +23,7 @@ $gutter-l: clamp(1.75rem, 1.6943rem + 0.2548vi, 2rem);
 $gutter-xl: clamp(2.625rem, 2.5414rem + 0.3822vi, 3rem);
 $gutter-2xl: clamp(3.5rem, 3.3885rem + 0.5096vi, 4rem);
 
-$padding-x: $gutter-l;
+$padding-x: $gutter-2xl;
 
 // Dimensions
 $nav-height: 4.5rem;
