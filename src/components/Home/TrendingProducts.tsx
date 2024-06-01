@@ -26,9 +26,9 @@ function TrendingProducts() {
   return (
     <section className="trending">
       <header className="trending__header">
-        <h3>Featured products</h3>
+        <h3 className="trending__subtitle">Featured products</h3>
 
-        <h1>Popular Right Now</h1>
+        <h1 className="trending__title">Popular Right Now</h1>
       </header>
       <main className="trending__products">
         {TrendingProductsData.map((product) => {
