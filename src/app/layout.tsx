@@ -46,6 +46,12 @@ export const metadata: Metadata = {
     title: "Comfy Store",
     description:
       "E-commerce for high-end furniture where luxury and comfort converge to create a haven for discerning individuals seeking to transform spaces.",
+    images: {
+      url: "/assets/trending/Luxury_Bedroom.webp",
+    },
+  },
+  icons: {
+    icon: "/favicon.ico",
   },
 }
 
@@ -56,6 +62,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon-16x16.png"
+        />
+      </head>
       <body className={poppins.className}>
         <Navbar />
 
