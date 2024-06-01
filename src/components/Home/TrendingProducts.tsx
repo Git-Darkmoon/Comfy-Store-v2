@@ -1,5 +1,6 @@
 import { Product } from "@/types"
 import ProductCard from "../ProductCard"
+import SectionTitle from "../SectionTitle"
 
 const TrendingProductsData: Product[] = [
   {
@@ -25,11 +26,7 @@ const TrendingProductsData: Product[] = [
 function TrendingProducts() {
   return (
     <section className="trending">
-      <header className="trending__header">
-        <h3 className="trending__subtitle">Featured products</h3>
-
-        <h1 className="trending__title">Popular Right Now</h1>
-      </header>
+      <SectionTitle title="Popular Right Now" subtitle="Featured products" />
       <main className="trending__products">
         {TrendingProductsData.map((product) => {
           return <ProductCard key={product.id} {...product} />

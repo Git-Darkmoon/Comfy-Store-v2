@@ -1,6 +1,15 @@
 import SliderCard from "./SliderCard"
 
-const SliderData = [
+type SliderCardProps = {
+  readonly id: number
+  readonly logo: string
+}
+
+// BE CAREFUL WITH THIS DATA: The amount of items here must
+// match the amount of items in the "$carousel__number-of-items"
+// variable in the file "./Slider.scss" or the slider will not work properly
+
+const SliderData: SliderCardProps[] = [
   {
     id: 1,
     logo: "/assets/carousel/logoipsum001.webp",

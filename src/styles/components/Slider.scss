@@ -16,7 +16,7 @@ $carousel__number-of-items: 6;
   @include mixins.flexy(center, center);
   gap: vars.$gutter-m;
   overflow: hidden;
-  background-color: hsl(33, 34%, 87%);
+  background-color: vars.$clr-gray;
 
   mask-image: linear-gradient(
     to right,

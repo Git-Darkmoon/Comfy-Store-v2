@@ -1,10 +1,12 @@
 @use "../styles/normalize";
 @use "../styles/variables" as vars;
-@use "../styles/components/Navbar.scss";
+@use "../styles/components/Layout/Navbar.scss";
+@use "../styles/components/Layout/Footer.scss";
 @use "../styles/components/Hero.scss";
 @use "../styles/components/Slider.scss";
 @use "../styles/components/ProductCard.scss";
 @use "../styles/components/TrendingProducts.scss";
+@use "../styles/components/SectionTitle.scss";
 
 /* total width */
 body::-webkit-scrollbar {
