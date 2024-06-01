@@ -40,9 +40,9 @@
 }
 
 .hero__title {
-  color: vars.$clr-white;
+  color: vars.$clr-cream;
   font-size: vars.$fs-3;
-  border: 2px solid vars.$clr-white;
+  border: 2px solid vars.$clr-cream;
   border-radius: vars.$border-radius;
   padding-inline: vars.$gutter-m;
   text-transform: uppercase;
@@ -53,10 +53,10 @@
 .hero__title:hover {
   color: vars.$clr-primary;
   border-color: vars.$clr-primary;
-  background-color: vars.$clr-white;
+  background-color: vars.$clr-cream;
 }
 
 .hero__subtitle {
-  color: vars.$clr-white;
+  color: vars.$clr-cream;
   margin-bottom: 3px;
 }

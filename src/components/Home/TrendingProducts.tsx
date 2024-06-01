@@ -4,7 +4,7 @@ import ProductCard from "../ProductCard"
 const TrendingProductsData: Product[] = [
   {
     id: 1,
-    name: "Light Bulb - Gold 24k",
+    name: "24k Gold Light Bulb ",
     image: "/assets/trending/Luxury_Lightning.webp",
     price: 529,
   },
@@ -16,7 +16,7 @@ const TrendingProductsData: Product[] = [
   },
   {
     id: 3,
-    name: "Italian High-end LR",
+    name: "Italian Living Room",
     image: "/assets/trending/Luxury_Living_Room.webp",
     price: 7219,
   },
@@ -24,13 +24,13 @@ const TrendingProductsData: Product[] = [
 
 function TrendingProducts() {
   return (
-    <section>
-      <header>
+    <section className="trending">
+      <header className="trending__header">
         <h3>Featured products</h3>
 
         <h1>Popular Right Now</h1>
       </header>
-      <main>
+      <main className="trending__products">
         {TrendingProductsData.map((product) => {
           return <ProductCard key={product.id} {...product} />
         })}

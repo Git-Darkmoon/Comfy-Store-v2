@@ -1,0 +1,39 @@
+@use "../variables" as vars;
+@use "../mixins" as mixins;
+
+.product-card {
+  background-color: vars.$clr-white;
+  color: vars.$clr-cream;
+
+  width: 350px;
+  padding: vars.$gutter-s;
+  border-radius: vars.$border-radius;
+  box-shadow: vars.$shadow;
+  @include mixins.my_transition(box-shadow, scale);
+
+  &:hover {
+    box-shadow: vars.$shadow-active;
+    scale: 1.05;
+  }
+}
+
+.product-card__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: vars.$border-radius;
+}
+
+.product-card__name {
+  font-size: vars.$fs-1;
+  color: vars.$clr-black;
+  text-align: center;
+  font-weight: 500;
+}
+
+.product-card__price {
+  font-size: vars.$fs-2;
+  font-weight: 200;
+  text-align: center;
+  color: vars.$clr-primary;
+}

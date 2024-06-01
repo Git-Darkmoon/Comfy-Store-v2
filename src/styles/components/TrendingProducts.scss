@@ -1,0 +1,15 @@
+@use "../variables" as vars;
+
+.trending {
+  margin-block: vars.$gutter-l;
+  padding-inline: vars.$padding-x;
+}
+
+.trending__products {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  width: 100%;
+  gap: vars.$gutter-m;
+  padding-block: vars.$gutter-l;
+}
