@@ -4,3 +4,10 @@ export type Product = {
   image: string
   price: number
 }
+
+export type Testimonial = {
+  id: number
+  rating: number
+  text: string
+  customer: string
+}
