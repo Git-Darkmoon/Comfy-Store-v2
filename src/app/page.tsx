@@ -1,3 +1,4 @@
+import Benefits from "@/components/Home/Benefits"
 import Hero from "@/components/Home/Hero"
 import Slider from "@/components/Home/Slider"
 import Testimonials from "@/components/Home/Testimonials"
@@ -10,6 +11,7 @@ function Home() {
       <Slider />
       <TrendingProducts />
       <Testimonials />
+      <Benefits />
     </>
   )
 }

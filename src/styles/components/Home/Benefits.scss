@@ -9,3 +9,23 @@
     gap: vars.$gutter-m;
   }
 }
+
+.benefitsCard {
+  text-align: center;
+
+  &__icon {
+    font-size: vars.$fs-2;
+    color: vars.$clr-primary;
+  }
+  &__title {
+    color: vars.$clr-secondary;
+    font-size: vars.$fs-1;
+    margin-bottom: 7px;
+    font-weight: 500;
+  }
+  &__text {
+    color: vars.$clr-black;
+    text-align: center;
+    font-weight: 300;
+  }
+}
