@@ -1,0 +1,11 @@
+@use "../../variables" as vars;
+
+.benefits {
+  margin-block: vars.$gutter-2xl;
+  padding-inline: vars.$padding-x;
+  &__wrapper {
+    margin-block: vars.$gutter-l;
+    display: flex;
+    gap: vars.$gutter-m;
+  }
+}
