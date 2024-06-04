@@ -10,6 +10,10 @@
   width: 100%;
 
   @include mixins.flexy(space-between, center);
+
+  input {
+    background-color: vars.$clr-white;
+  }
 }
 
 .footer :not(h2):not(h3):not(.footer__dev):not(.footer__author) {
