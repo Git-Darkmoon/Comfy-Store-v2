@@ -1,0 +1,72 @@
+@use "../../variables" as vars;
+@use "../../mixins" as mixins;
+
+.footer {
+  background-color: vars.$clr-gray;
+
+  padding-block: vars.$gutter-l;
+  padding-inline: vars.$padding-x;
+
+  width: 100%;
+
+  @include mixins.flexy(space-between, center);
+}
+
+.footer :not(h2):not(h3):not(.footer__dev):not(.footer__author) {
+  font-size: vars.$fs-0;
+}
+
+.footer__title {
+  font-size: vars.$fs-1;
+}
+
+.footer__socials {
+  @include mixins.flexy(start);
+  gap: vars.$gutter-s;
+
+  a {
+    color: vars.$clr-black;
+  }
+}
+
+.footer__content {
+  color: vars.$clr-black;
+  opacity: 0.75;
+  @include mixins.my_transition(opacity);
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.footer__dev {
+  font-size: 0.75rem;
+
+  a {
+    text-decoration: 1.5px underline vars.$clr-black;
+    text-underline-offset: 2px;
+    color: vars.$clr-black;
+  }
+}
+
+.footer__subscribe-input {
+  font-size: vars.$fs-1;
+  padding-block: 0.5rem;
+  padding-inline: vars.$gutter-m;
+  border-radius: vars.$border-radius;
+  margin-block-end: 0.5rem;
+}
+.footer__subscribe-btn {
+  display: block;
+  width: 100%;
+  padding-block: 0.25rem;
+  border-radius: vars.$border-radius;
+  background-color: vars.$clr-primary;
+  color: vars.$clr-cream;
+
+  @include mixins.my_transition(scale);
+
+  &:hover {
+    scale: 1.05;
+  }
+}

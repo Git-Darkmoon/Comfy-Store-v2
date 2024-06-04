@@ -1,11 +1,9 @@
 @use "../styles/normalize";
 @use "../styles/variables" as vars;
-@use "../styles/components/Layout/Navbar.scss";
-@use "../styles/components/Layout/Footer.scss";
-@use "../styles/components/Hero.scss";
-@use "../styles/components/Slider.scss";
+@use "../styles/components/SharedLayout/Navbar.scss";
+@use "../styles/components/SharedLayout/Footer.scss";
+@use "../styles/_imports/home.scss";
 @use "../styles/components/ProductCard.scss";
-@use "../styles/components/TrendingProducts.scss";
 @use "../styles/components/SectionTitle.scss";
 
 /* total width */
@@ -16,7 +14,7 @@ body::-webkit-scrollbar {
 
 /* background of the scrollbar except button or resizer */
 body::-webkit-scrollbar-track {
-  background-color: vars.$clr-white;
+  background-color: vars.$clr-cream;
 }
 
 /* scrollbar itself */

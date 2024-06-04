@@ -1,42 +1,62 @@
+import Link from "next/link"
+import { IconType } from "react-icons"
 import { FaFacebook } from "react-icons/fa"
 import { FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6"
 
+type socials = {
+  path: string
+  icon: IconType
+}
+
 const year = new Date().getFullYear()
+const footer__socials: socials[] = [
+  {
+    path: "https://www.facebook.com/",
+    icon: FaFacebook,
+  },
+  {
+    path: "https://x.com/",
+    icon: FaXTwitter,
+  },
+  {
+    path: "https://www.youtube.com/",
+    icon: FaYoutube,
+  },
+  {
+    path: "https://www.instagram.com/",
+    icon: FaInstagram,
+  },
+]
 
 function Footer() {
   return (
     <footer className="footer">
       {/* Info Content */}
       <div>
-        <h1>Comfy Store</h1>
+        <h2 className="footer__title">Comfy Store</h2>
 
         <ul className="footer__socials">
-          <li>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <FaFacebook />
-            </a>
-          </li>
-          <li>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <FaXTwitter />
-            </a>
-          </li>
-          <li>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <FaYoutube />
-            </a>
-          </li>
-          <li>
-            <a href="http://" target="_blank" rel="noopener noreferrer">
-              <FaInstagram />
-            </a>
-          </li>
+          {footer__socials.map((social) => {
+            return (
+              <li key={social.path}>
+                <a
+                  href={social.path}
+                  className="footer__content"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <social.icon />
+                </a>
+              </li>
+            )
+          })}
         </ul>
 
-        <p>
+        <p className="footer__dev">
           Developed by:{" "}
           <a
-            href="http://www.linkedin.com/in/"
+            className="footer__author"
+            href="https://www.linkedin.com/in/nicol%C3%A1s-mayorga-7z0/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -47,13 +67,25 @@ function Footer() {
       </div>
       {/* Resources Content */}
       <div>
-        <h2>Resources</h2>
+        <h3>Resources</h3>
+        <Link className="footer__content" href={"/contact"}>
+          Contact
+        </Link>
+        <br />
+        <Link className="footer__content" href={"/help"}>
+          Help
+        </Link>
       </div>
       {/* Subscribe Content */}
       <div>
-        <h2>Subscribe</h2>
-        <input type="text" name="" id="" />
-        <button>Subscribe</button>
+        <h3>Subscribe</h3>
+        <input
+          className="footer__subscribe-input"
+          type="text"
+          name="subscribe"
+          placeholder="example@gmail.com"
+        />
+        <button className="footer__subscribe-btn">Subscribe</button>
       </div>
     </footer>
   )
