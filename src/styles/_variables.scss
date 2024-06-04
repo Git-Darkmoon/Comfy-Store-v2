@@ -1,10 +1,11 @@
 // Colors
-$clr-white: #fbf7ef;
+$clr-white: hsl(40, 60%, 96.5%);
 $clr-cream: #f9f4e8;
 $clr-gray: #e9dfd3;
 $clr-black: #212121;
 $clr-primary: #a17c59;
-$clr-secondary: #fe4a49; //#6c969d
+$clr-secondary: hsl(40, 60%, 9.5%); //#6c969d
+$clr-error: #fe4a49; //#6c969d
 
 // Transitions
 $transition_duration: 200ms;
