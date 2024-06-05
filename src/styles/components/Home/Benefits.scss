@@ -3,6 +3,7 @@
 .benefits {
   margin-block: vars.$gutter-2xl;
   padding-inline: vars.$padding-x;
+  padding-block-start: vars.$gutter-l;
   &__wrapper {
     margin-block: vars.$gutter-l;
     display: flex;

@@ -12,15 +12,15 @@ type SliderCardProps = {
 const SliderData: SliderCardProps[] = [
   {
     id: 1,
-    logo: "/assets/carousel/logoipsum001.webp",
+    logo: "/assets/carousel/logo-ethan.webp",
   },
   {
     id: 2,
-    logo: "/assets/carousel/logoipsum002.webp",
+    logo: "/assets/carousel/logo-herman.webp",
   },
   {
     id: 3,
-    logo: "/assets/carousel/logoipsum003.webp",
+    logo: "/assets/carousel/logo-crate.webp",
   },
   {
     id: 4,
@@ -28,11 +28,11 @@ const SliderData: SliderCardProps[] = [
   },
   {
     id: 5,
-    logo: "/assets/carousel/logoipsum005.webp",
+    logo: "/assets/carousel/logo-knoll.webp",
   },
   {
     id: 6,
-    logo: "/assets/carousel/logoipsum006.webp",
+    logo: "/assets/carousel/logo-west.webp",
   },
 ]
 
