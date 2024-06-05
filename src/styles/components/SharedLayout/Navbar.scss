@@ -48,3 +48,9 @@
 .navbar__icon {
   font-size: vars.$fs-1;
 }
+
+@media (width <= 768px) {
+  .navbar__linksContainer {
+    display: none;
+  }
+}

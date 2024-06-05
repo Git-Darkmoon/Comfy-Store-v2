@@ -8,7 +8,6 @@
   padding-inline: vars.$padding-x;
 
   width: 100%;
-  height: vars.$footer-height;
 
   @include mixins.flexy(space-between, center);
 
@@ -73,5 +72,14 @@
 
   &:hover {
     scale: 1.05;
+  }
+}
+
+@media (width <= 768px) {
+  .footer {
+    flex-direction: column;
+    align-items: start;
+
+    gap: vars.$gutter-s;
   }
 }

@@ -35,5 +35,5 @@ html {
 }
 
 .main {
-  min-height: calc(100vh - vars.$nav-height - vars.$footer-height);
+  min-height: calc(100vh - vars.$nav-height);
 }

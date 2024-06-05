@@ -6,7 +6,7 @@ import Footer from "@/components/Layout/Footer"
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "700"],
+  weight: ["200", "300", "400", "500", "600", "700"],
   fallback: ["system-ui", "Helvetica", "Arial", "sans-serif"],
 })
 
