@@ -3,6 +3,7 @@
 @use "../styles/components/SharedLayout/Navbar.scss";
 @use "../styles/components/SharedLayout/Footer.scss";
 @use "../styles/_imports/home.scss";
+@use "../styles/_imports/about.scss";
 @use "../styles/components/ProductCard.scss";
 @use "../styles/components/SectionTitle.scss";
 
@@ -31,4 +32,8 @@ body::-webkit-scrollbar-button {
 
 html {
   scrollbar-gutter: stable;
+}
+
+.main {
+  min-height: calc(100vh - vars.$nav-height - vars.$footer-height);
 }
