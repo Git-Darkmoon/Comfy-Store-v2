@@ -54,6 +54,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  metadataBase: new URL("https://comfys.vercel.app/"),
 }
 
 export default function RootLayout({
