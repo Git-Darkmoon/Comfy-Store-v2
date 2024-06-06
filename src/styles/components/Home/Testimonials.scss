@@ -19,7 +19,7 @@
   border-radius: vars.$border-radius;
   padding: vars.$gutter-s;
   box-shadow: vars.$shadow;
-  @include mixins.flexy(space-between, start, column);
+  @include mixins.flexy(space-between, flex-start, column);
   @include mixins.my_transition(box-shadow, scale);
   &:hover {
     box-shadow: vars.$shadow-active;
