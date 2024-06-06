@@ -15,6 +15,12 @@ This project is built with the following technologies:
 - **React Query**: A library for fetching, caching, and updating asynchronous data in React.
 - **Axios**: A promise-based HTTP client for the browser and Node.js.
 
+## API Documentation
+
+Click the postman badge to open the complete API documentation containing the base url and all the endpoints.
+
+[![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)](https://documenter.getpostman.com/view/18152321/2s9Xy5KpTi)
+
 ## Getting Started
 
 Follow these steps to get a local copy of the project up and running.
@@ -30,3 +36,4 @@ Follow these steps to get a local copy of the project up and running.
    ```bash
    git clone https://github.com/Git-Darkmoon/Comfy-store-v2.git
    cd comfy-store-redesign
+   ```
