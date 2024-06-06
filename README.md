@@ -2,6 +2,9 @@
 
 Welcome to the Comfy Store web application redesign project! This project aims to provide a more minimalist look and feel to the existing Comfy Store, enhancing the user experience with modern web technologies.
 
+[![image](https://github.com/Git-Darkmoon/Comfy-Store-v2/assets/80002392/df996927-85b0-47cb-bc60-8f2a30fa70ad)](https://comfys.vercel.app/)
+
+
 ## About Comfy Store
 
 Comfy Store is where luxury and comfort converge to create a haven for those looking to transform their living spaces. Our exclusive collection of high-end furniture balances sophistication and tranquility, reflecting timeless elegance and superior craftsmanship. At Comfy Store, we are dedicated to providing an immersive experience that goes beyond selling furniture. We prioritize your satisfaction from selection to delivery, ensuring your home resonates with comfort, style, and a touch of opulence.
