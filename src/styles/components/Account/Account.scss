@@ -1,10 +1,45 @@
-.input-container {
-  position: relative;
-  margin: 50px auto;
-  width: 200px;
+@use "../../variables" as vars;
+@use "../../mixins" as mixins;
+
+.accountFormWrapper {
+  width: 100%;
+  height: calc(100vh - vars.$nav-height);
+  @include mixins.flexy(center, center, column);
+
+  a {
+    color: vars.$clr-primary;
+    padding-inline: vars.$gutter-s;
+    font-weight: 500;
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
 }
 
-.input-container input[type="text"] {
+.accountForm {
+  background-color: vars.$clr-white;
+  border-radius: vars.$border-radius;
+  padding: vars.$gutter-m;
+  box-shadow: vars.$shadow;
+
+  @include mixins.flexy(center, center, column);
+  gap: vars.$gutter-xl;
+  @include mixins.my_transition(box-shadow, scale);
+
+  &:hover {
+    box-shadow: vars.$shadow-active;
+    scale: 1.05;
+  }
+}
+
+.accountForm__input-container {
+  position: relative;
+  margin-inline: auto;
+  width: 380px;
+}
+
+.accountForm__input {
   font-size: 20px;
   width: 100%;
   border: none;
@@ -12,36 +47,55 @@
   padding: 5px 0;
   background-color: transparent;
   outline: none;
+  font-size: vars.$fs-0;
 }
 
-.input-container .label {
+.accountForm__label {
   position: absolute;
   top: 0;
   left: 0;
   color: #ccc;
   transition: all 0.3s ease;
+  text-transform: capitalize;
   pointer-events: none;
 }
 
-.input-container input[type="text"]:focus ~ .label,
-.input-container input[type="text"]:valid ~ .label {
+.accountForm__input:focus + .accountForm__label,
+.accountForm__input:valid + .accountForm__label {
   top: -20px;
   font-size: 16px;
-  color: #333;
+  color: vars.$clr-primary;
 }
 
-.input-container .underline {
+.accountForm__input-underline {
   position: absolute;
   bottom: 0;
   left: 0;
   height: 2px;
   width: 100%;
-  background-color: #333;
+  background-color: vars.$clr-primary;
   transform: scaleX(0);
   transition: all 0.3s ease;
 }
 
-.input-container input[type="text"]:focus ~ .underline,
-.input-container input[type="text"]:valid ~ .underline {
+.accountForm__input:focus + .accountForm__label + .accountForm__input-underline,
+.accountForm__input:valid
+  + .accountForm__label
+  + .accountForm__input-underline {
   transform: scaleX(1);
+}
+
+.accountForm__btn {
+  width: 100%;
+  padding: vars.$gutter-s;
+  background-color: vars.$clr-primary;
+  color: vars.$clr-white;
+  border-radius: vars.$border-radius;
+  font-size: vars.$fs-0;
+
+  @include mixins.my_transition(filter);
+
+  &:hover {
+    filter: brightness(0.9);
+  }
 }
