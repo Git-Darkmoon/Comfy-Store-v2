@@ -11,3 +11,8 @@ export type Testimonial = {
   text: string
   customer: string
 }
+
+export type User = {
+  username: string
+  jwt: string
+}

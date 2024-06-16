@@ -3,6 +3,8 @@ import { Poppins } from "next/font/google"
 import "./globals.scss"
 import Navbar from "@/components/Layout/Navbar"
 import Footer from "@/components/Layout/Footer"
+import { Provider } from "react-redux"
+import { store } from "@/store"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -63,12 +65,14 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={poppins.className}>
-        <Navbar />
-        <main className="main">{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <Provider store={store}>
+      <html lang="en">
+        <body className={poppins.className}>
+          <Navbar />
+          <main className="main">{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </Provider>
   )
 }
