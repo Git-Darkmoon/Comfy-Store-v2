@@ -1,3 +1,5 @@
+"use client"
+
 import { createSlice } from "@reduxjs/toolkit"
 import { type User } from "../../types"
 
@@ -13,8 +15,7 @@ const getUserFromLocalStorage = (): User | null => {
 }
 
 const initialUserState: userState = {
-  //   user: getUserFromLocalStorage(),
-  user: null,
+  user: getUserFromLocalStorage(),
 }
 
 const userSlice = createSlice({
