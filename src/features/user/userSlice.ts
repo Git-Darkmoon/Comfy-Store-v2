@@ -13,7 +13,8 @@ const getUserFromLocalStorage = (): User | null => {
 }
 
 const initialUserState: userState = {
-  user: getUserFromLocalStorage(),
+  //   user: getUserFromLocalStorage(),
+  user: null,
 }
 
 const userSlice = createSlice({
