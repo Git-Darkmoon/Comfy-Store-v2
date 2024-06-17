@@ -1,4 +1,4 @@
-import { Testimonial } from "@/types"
+import { Testimonial } from "@/utils/types"
 import TestimonialCard from "./TestimonialCard"
 import SectionTitle from "../SectionTitle"
 const allTestimonials: Testimonial[] = [

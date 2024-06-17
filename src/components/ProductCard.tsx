@@ -1,4 +1,4 @@
-import { Product } from "@/types"
+import { Product } from "@/utils/types"
 import Image from "next/image"
 
 function ProductCard({ image, name, price }: Product) {

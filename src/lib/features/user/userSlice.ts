@@ -1,7 +1,7 @@
 "use client"
 
 import { createSlice } from "@reduxjs/toolkit"
-import { type User } from "../../types"
+import { type User } from "../../../utils/types"
 
 type userState = {
   user: User | null

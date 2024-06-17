@@ -1,4 +1,4 @@
-import { Product } from "@/types"
+import { Product } from "@/utils/types"
 import ProductCard from "../ProductCard"
 import SectionTitle from "../SectionTitle"
 

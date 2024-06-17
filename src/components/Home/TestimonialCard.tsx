@@ -1,4 +1,4 @@
-import { Testimonial } from "@/types"
+import { Testimonial } from "@/utils/types"
 import { Rate } from "antd"
 
 function TestimonialCard({ rating, text, customer }: Testimonial) {
