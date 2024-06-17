@@ -32,3 +32,8 @@ export type UserResponse = {
   readonly createdAt: Date
   readonly updatedAt: Date
 }
+
+export type loginCredentials = {
+  email: string
+  password: string
+}
