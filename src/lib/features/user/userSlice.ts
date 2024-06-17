@@ -21,7 +21,14 @@ const initialUserState: userState = {
 const userSlice = createSlice({
   name: "user",
   initialState: initialUserState,
-  reducers: {},
+  reducers: {
+    loginUser: (state, action) => {
+      const loggedUser = action.payload
+      localStorage.setItem("user", JSON.stringify(loggedUser))
+
+      state.user = loggedUser
+    },
+  },
 })
 
 export const userReducer = userSlice.reducer
