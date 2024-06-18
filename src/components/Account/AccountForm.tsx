@@ -14,9 +14,9 @@ function AccountForm({ submitHandler, variant }: accountFormProps) {
         <form onSubmit={submitHandler} className="accountForm">
           <SectionTitle title="Login" subtitle="Shop your way" />
           <AccountFormInput
-            key={"email"}
-            id="email"
-            label="email"
+            key={"identifier"}
+            id="identifier"
+            label="identifier"
             type="email"
           />
           <AccountFormInput
@@ -44,7 +44,12 @@ function AccountForm({ submitHandler, variant }: accountFormProps) {
           label="username"
           type="text"
         />
-        <AccountFormInput key={"email"} id="email" label="email" type="email" />
+        <AccountFormInput
+          key={"identifier"}
+          id="identifier"
+          label="identifier"
+          type="identifier"
+        />
         <AccountFormInput
           key={"password"}
           id="password"
