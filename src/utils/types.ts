@@ -34,6 +34,6 @@ export type UserResponse = {
 }
 
 export type loginCredentials = {
-  email: string
+  identifier: string
   password: string
 }

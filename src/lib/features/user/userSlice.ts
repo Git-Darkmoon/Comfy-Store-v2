@@ -8,10 +8,13 @@ type userState = {
 }
 
 const getUserFromLocalStorage = (): User | null => {
-  const user = localStorage.getItem("user")
-  if (!user) return null
+  let user: string | null = ""
+  if (typeof window !== "undefined") {
+    user = localStorage.getItem("user")
 
-  return JSON.parse(user)
+    if (!user) return null
+  }
+  return user ? JSON.parse(user) : null
 }
 
 const initialUserState: userState = {
