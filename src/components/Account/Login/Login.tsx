@@ -2,7 +2,8 @@
 
 import AccountForm from "../AccountForm"
 import { useAppDispatch } from "@/lib/hooks"
-import { loginUser } from "@/lib/features/user/userSlice"
+import { makeUserLogin } from "@/lib/features/user/userSlice"
+import { loginCredentials } from "@/utils/types"
 
 function Login() {
   const dispatch = useAppDispatch()
@@ -13,7 +14,7 @@ function Login() {
     const formData = new FormData(event.currentTarget)
     const data = Object.fromEntries(formData.entries())
 
-    dispatch(loginUser(data))
+    dispatch(makeUserLogin(data as loginCredentials))
   }
 
   return <AccountForm submitHandler={handleSubmit} variant="login" />

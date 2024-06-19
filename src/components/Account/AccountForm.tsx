@@ -1,6 +1,7 @@
 import Link from "next/link"
 import SectionTitle from "../SectionTitle"
 import AccountFormInput from "./AccountFormInput"
+import { useAppSelector } from "@/lib/hooks"
 
 type accountFormProps = {
   submitHandler: (e: React.FormEvent<HTMLFormElement>) => void
@@ -8,6 +9,8 @@ type accountFormProps = {
 }
 
 function AccountForm({ submitHandler, variant }: accountFormProps) {
+  const { isLoading } = useAppSelector((state) => state.user)
+
   if (variant === "login") {
     return (
       <main className="accountFormWrapper">
@@ -25,7 +28,9 @@ function AccountForm({ submitHandler, variant }: accountFormProps) {
             label="Password"
             type="password"
           />
-          <button className="accountForm__btn">Login</button>
+          <button className="accountForm__btn" disabled={isLoading}>
+            {isLoading ? "loading..." : "Login"}
+          </button>
           <p>
             Not a member yet ?<Link href={"/register"}>Register</Link>
           </p>
