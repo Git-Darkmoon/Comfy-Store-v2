@@ -13,8 +13,10 @@ export type Testimonial = {
 }
 
 export type User = {
-  username: string
-  jwt: string
+  // username: string
+  // jwt: string
+  identifier: string
+  password: string
 }
 
 export type LoginAPIResponse = {

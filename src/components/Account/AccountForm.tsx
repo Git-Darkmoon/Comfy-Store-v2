@@ -16,7 +16,7 @@ function AccountForm({ submitHandler, variant }: accountFormProps) {
           <AccountFormInput
             key={"identifier"}
             id="identifier"
-            label="identifier"
+            label="email"
             type="email"
           />
           <AccountFormInput

@@ -4,6 +4,7 @@ import "./globals.scss"
 import Navbar from "@/components/Layout/Navbar"
 import Footer from "@/components/Layout/Footer"
 import StoreProvider from "./StoreProvider"
+import { Toaster } from "react-hot-toast"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -66,6 +67,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
+        <Toaster position="top-center" />
         <Navbar />
         <main className="main">
           <StoreProvider>{children}</StoreProvider>

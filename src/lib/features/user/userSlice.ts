@@ -1,8 +1,11 @@
 "use client"
 
 import { createSlice } from "@reduxjs/toolkit"
-import { type User } from "../../../utils/types"
+import { loginCredentials, type User } from "../../../utils/types"
 import { loginUserRequest } from "@/services/comfy"
+import toast from "react-hot-toast"
+import { redirect } from "next/navigation"
+import Router from "next/router"
 
 type userState = {
   user: User | null
@@ -22,10 +25,15 @@ const initialUserState: userState = {
   user: getUserFromLocalStorage(),
 }
 
-function makeUserLogin(credentials: any) {
+function makeUserLogin(credentials: loginCredentials) {
   loginUserRequest(credentials)
-    .then((res) => {})
-    .catch(() => {})
+    .then((res) => {
+      return redirect("/")
+    })
+    .catch((error) => {
+      console.log(error)
+      toast.error(error as string)
+    })
 }
 
 const userSlice = createSlice({
@@ -33,13 +41,12 @@ const userSlice = createSlice({
   initialState: initialUserState,
   reducers: {
     loginUser: (state, action) => {
-      const loggedUser = action.payload
-      const test = loginUserRequest(loggedUser)
-      console.log(test)
+      const credentials: loginCredentials = action.payload
+      makeUserLogin(credentials)
 
-      localStorage.setItem("user", JSON.stringify(loggedUser))
+      localStorage.setItem("user", JSON.stringify(credentials))
 
-      state.user = loggedUser
+      state.user = credentials
     },
   },
 })

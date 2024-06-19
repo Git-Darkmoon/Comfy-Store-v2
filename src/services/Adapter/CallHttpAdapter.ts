@@ -42,11 +42,11 @@ export async function callPostHttpAdapter(
     const response = await httpAdapter.post(url, data, config)
     return response
   } catch (error: any) {
-    ErrorHandler({
-      message: error.response.data.detail ?? error.message,
+    throw ErrorHandler({
+      message: error.response.data.error.message ?? error.message,
       status: error.status ?? error.response?.status,
     })
-    throw error
+    // console.log(error.response.data.error.message)
   }
 }
 
