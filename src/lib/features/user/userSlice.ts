@@ -1,23 +1,27 @@
 "use client"
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import { loginCredentials, type User } from "../../../utils/types"
+import {
+  loginCredentials,
+  userLoginAPIResponse,
+  type User,
+} from "../../../utils/types"
 import { loginUserRequest } from "@/services/comfy"
 import toast from "react-hot-toast"
 import { redirect } from "next/navigation"
 
 type userState = {
-  user: User | null
+  user: userLoginAPIResponse | null
   isLoading: boolean
 }
 
-const getUserFromLocalStorage = (): User | null => {
+const getUserFromLocalStorage = (): userLoginAPIResponse | null => {
   let user: string | null = ""
-  if (typeof window !== "undefined") {
-    user = localStorage.getItem("user")
+  // if (typeof window !== "undefined") {
+  if (!user) return null
+  user = localStorage.getItem("user")
 
-    if (!user) return null
-  }
+  // }
   return user ? JSON.parse(user) : null
 }
 
@@ -28,10 +32,10 @@ const initialUserState: userState = {
 
 export const makeUserLogin = createAsyncThunk(
   "user/loginUser",
-  async (credentials: loginCredentials) => {
+  async (credentials: loginCredentials, { rejectWithValue }) => {
     try {
       const response = await loginUserRequest(credentials)
-      return response.data // Only returning the data you need
+      return response.data
     } catch (error) {
       const errorMessage =
         error instanceof Error ? error.message : String(error)
@@ -43,26 +47,32 @@ export const makeUserLogin = createAsyncThunk(
 const userSlice = createSlice({
   name: "user",
   initialState: initialUserState,
-  reducers: {},
+  reducers: {
+    logoutUser: (state) => {
+      state.user = null
+      localStorage.removeItem("user")
+    },
+  },
   extraReducers: (builder) => {
-    builder.addCase(makeUserLogin.pending, (state) => {
-      state.isLoading = true
-    })
-    builder.addCase(makeUserLogin.fulfilled, (state, action) => {
-      const credentials: loginCredentials = action?.payload
-      localStorage.setItem("user", JSON.stringify(credentials))
-      state.user = credentials
+    builder
+      .addCase(makeUserLogin.pending, (state) => {
+        state.isLoading = true
+      })
+      .addCase(makeUserLogin.fulfilled, (state, action) => {
+        const credentials: loginCredentials & userLoginAPIResponse =
+          action?.payload
+        localStorage.setItem("user", JSON.stringify(credentials))
+        state.user = credentials
 
-      state.isLoading = false
-    })
+        state.isLoading = false
+      })
+      .addCase(makeUserLogin.rejected, (state, action) => {
+        toast.error(action.error.message as string)
 
-    builder.addCase(makeUserLogin.rejected, (state, action) => {
-      toast.error(action.error.message as string)
-
-      state.isLoading = false
-    })
+        state.isLoading = false
+      })
   },
 })
 
-// export const { loginUser } = userSlice.actions
+export const { logoutUser } = userSlice.actions
 export const userReducer = userSlice.reducer

@@ -1,5 +1,12 @@
+"use client"
+
+import { logoutUser } from "@/lib/features/user/userSlice"
+import { useAppDispatch, useAppSelector } from "@/lib/hooks"
 import { ROUTES_NAME, ROUTES_PATH } from "@/utils/routes"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
+import toast from "react-hot-toast"
+import { CiLogout } from "react-icons/ci"
 import { FaShoppingBag, FaUserAlt } from "react-icons/fa"
 
 const NavbarElements = [
@@ -22,34 +29,62 @@ const NavbarElements = [
 ]
 
 function Navbar() {
+  const { user } = useAppSelector((state) => state.user)
+  const dispatch = useAppDispatch()
+  const router = useRouter()
+
+  const handleLogout = () => {
+    // dispatch(clearCart()) TO-DO
+    dispatch(logoutUser())
+    toast.success("Logged Out")
+    router.push("/")
+  }
+
   return (
     <nav className="navbar">
       <header className="navbar__wrapper">
         <div className="navbar__logo">Comfy Store</div>
+
         <ul className="navbar__linksContainer">
-          {NavbarElements.map(({ name, path }) => (
-            <li key={name}>
-              <Link className="navbar__link" href={path}>
-                {name}
-              </Link>
-            </li>
-          ))}
+          {user &&
+            NavbarElements.map(({ name, path }) => (
+              <li key={name}>
+                <Link className="navbar__link" href={path}>
+                  {name}
+                </Link>
+              </li>
+            ))}
         </ul>
+
         <div className="navbar__iconsContainer">
-          <Link
-            className="navbar__link navbar__icon"
-            href={ROUTES_PATH.USER}
-            about={ROUTES_NAME.USER}
-          >
-            <FaUserAlt />
-          </Link>
-          <Link
-            className="navbar__link navbar__icon"
-            href={ROUTES_PATH.CART}
-            about={ROUTES_NAME.CART}
-          >
-            <FaShoppingBag />
-          </Link>
+          {user ? (
+            <>
+              <p className="navbar__loggedUser">{user?.user?.username}</p>
+              <button className="navbar__primaryBtn" onClick={handleLogout}>
+                Logout
+                <CiLogout className="navbar__logoutIcon" />
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                className="navbar__loginBtn"
+                href={ROUTES_PATH.LOGIN}
+                about={ROUTES_NAME.LOGIN}
+              >
+                {ROUTES_NAME.LOGIN}
+                <CiLogout className="navbar__logoutIcon" />
+              </Link>
+              <Link
+                className="navbar__registerBtn"
+                href={ROUTES_PATH.REGISTER}
+                about={ROUTES_NAME.REGISTER}
+              >
+                {ROUTES_NAME.REGISTER}
+                <CiLogout className="navbar__logoutIcon" />
+              </Link>
+            </>
+          )}
         </div>
       </header>
     </nav>

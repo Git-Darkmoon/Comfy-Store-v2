@@ -19,7 +19,7 @@ export type User = {
   password: string
 }
 
-export type LoginAPIResponse = {
+export type userLoginAPIResponse = {
   readonly jwt: string
   readonly user: UserResponse
 }

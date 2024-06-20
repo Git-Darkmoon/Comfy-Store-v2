@@ -5,7 +5,8 @@ export enum ROUTES_NAME {
   CART = "Cart",
   CHECKOUT = "Checkout",
   ORDERS = "Orders",
-  USER = "User Profile Account",
+  LOGIN = "Sign In",
+  REGISTER = "Register",
 }
 
 export enum ROUTES_PATH {
@@ -15,5 +16,6 @@ export enum ROUTES_PATH {
   CART = "/cart",
   CHECKOUT = "/checkout",
   ORDERS = "/orders",
-  USER = "/account",
+  LOGIN = "/login",
+  REGISTER = "/register",
 }

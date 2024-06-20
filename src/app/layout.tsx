@@ -68,11 +68,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <Toaster position="top-center" />
-        <Navbar />
-        <main className="main">
-          <StoreProvider>{children}</StoreProvider>
-        </main>
-        <Footer />
+        <StoreProvider>
+          <Navbar />
+          <main className="main">{children}</main>
+          <Footer />
+        </StoreProvider>
       </body>
     </html>
   )

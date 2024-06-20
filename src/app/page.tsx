@@ -10,16 +10,15 @@ import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 
 function Home() {
-  const { user } = useAppSelector((state) => state.user)
   const router = useRouter()
+  const { user } = useAppSelector((state) => state.user)
 
   useEffect(() => {
-    if (user) {
-      router.push("/")
-    } else {
+    if (!user) {
       router.push("/login")
     }
-  }, [user])
+    router.push("/")
+  }, [user, router])
 
   return (
     <>
