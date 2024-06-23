@@ -5,6 +5,7 @@ import Navbar from "@/components/Layout/Navbar"
 import Footer from "@/components/Layout/Footer"
 import StoreProvider from "./StoreProvider"
 import { Toaster } from "react-hot-toast"
+import ReactQueryProvider from "@/utils/ReactQueryProvider"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -68,11 +69,13 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <Toaster position="top-center" />
-        <StoreProvider>
-          <Navbar />
-          <main className="main">{children}</main>
-          <Footer />
-        </StoreProvider>
+        <ReactQueryProvider>
+          <StoreProvider>
+            <Navbar />
+            <main className="main">{children}</main>
+            <Footer />
+          </StoreProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   )

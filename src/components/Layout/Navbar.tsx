@@ -60,7 +60,7 @@ function Navbar() {
           {user ? (
             <>
               <p className="navbar__loggedUser">{user?.user?.username}</p>
-              <button className="navbar__primaryBtn" onClick={handleLogout}>
+              <button className="navbar__registerBtn" onClick={handleLogout}>
                 Logout
                 <CiLogout className="navbar__logoutIcon" />
               </button>
