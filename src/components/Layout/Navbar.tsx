@@ -1,7 +1,7 @@
 "use client"
 
 import { logoutUser } from "@/lib/features/user/userSlice"
-import { useAppDispatch, useAppSelector, useAuth } from "@/lib/hooks"
+import { useAppDispatch } from "@/lib/hooks"
 import { useLocalStorage } from "@/lib/utils"
 import { ROUTES_NAME, ROUTES_PATH } from "@/utils/routes"
 import Link from "next/link"
