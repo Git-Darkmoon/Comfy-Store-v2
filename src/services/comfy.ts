@@ -13,5 +13,13 @@ export async function loginUserRequest(
 
 export async function getProducts(): Promise<any> {
   const response = await callGetHttpAdapter("/products", (data) => data)
-  return response as ProductsAPIResponse
+  return response.data as ProductsAPIResponse
+}
+
+export async function getFeaturedProducts(): Promise<any> {
+  const response = await callGetHttpAdapter(
+    "/products?featured=true",
+    (data) => data
+  )
+  return response.data as ProductsAPIResponse
 }

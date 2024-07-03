@@ -1,5 +1,3 @@
-"use client"
-
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import {
   loginCredentials,
@@ -15,18 +13,8 @@ type userState = {
   isLoading: boolean
 }
 
-const getUserFromLocalStorage = (): userLoginAPIResponse | null => {
-  let user: string | null = ""
-  // if (typeof window !== "undefined") {
-  if (!user) return null
-  user = localStorage.getItem("user")
-
-  // }
-  return user ? JSON.parse(user) : null
-}
-
 const initialUserState: userState = {
-  user: getUserFromLocalStorage(),
+  user: null,
   isLoading: false,
 }
 

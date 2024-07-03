@@ -11,7 +11,7 @@ export async function callGetHttpAdapter(
 ) {
   try {
     const response = await httpAdapter.get(url, config)
-    const adaptedData = adapterFunction(response.data)
+    const adaptedData = adapterFunction(response)
     return adaptedData
   } catch (error: any) {
     return ErrorHandler({

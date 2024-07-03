@@ -1,10 +1,3 @@
-export type Product = {
-  id: number
-  name: string
-  image: string
-  price: number
-}
-
 export type Testimonial = {
   id: number
   rating: number
@@ -47,10 +40,10 @@ export type ProductsAPIResponse = {
 
 export type ProductData = {
   readonly id: number
-  readonly attributes: Attributes
+  readonly attributes: ProductAttributes
 }
 
-export type Attributes = {
+export type ProductAttributes = {
   readonly title: string
   readonly company: string
   readonly description: string
