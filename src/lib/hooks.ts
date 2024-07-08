@@ -4,7 +4,6 @@ import type { RootState, AppDispatch } from "./store"
 import { useQuery } from "@tanstack/react-query"
 import { getFeaturedProducts, getProducts } from "@/services/comfy"
 import { ProductsAPIResponse } from "@/utils/types"
-import { useLocalStorage } from "./utils"
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch: () => AppDispatch = useDispatch

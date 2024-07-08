@@ -1,0 +1,17 @@
+@use "../../variables" as vars;
+@use "../../mixins" as mixins;
+
+.products {
+  display: flex;
+  margin: vars.$gutter-2xl auto;
+  padding-inline: vars.$padding-x;
+  gap: vars.$gutter-l;
+
+  &__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: vars.$gutter-l;
+    padding-block: vars.$gutter-s;
+  }
+}

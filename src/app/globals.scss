@@ -4,9 +4,10 @@
 @use "../styles/components/SharedLayout/Footer.scss";
 @use "../styles/_imports/home.scss";
 @use "../styles/_imports/about.scss";
-@use "../styles/_imports/account.scss";
-@use "../styles/components/ProductCard.scss";
 @use "../styles/components/SectionTitle.scss";
+@use "../styles/_imports/account.scss";
+@use "../styles/_imports/products.scss";
+@use "../styles/components/NotFoundPage/NotFound.scss";
 
 /* total width */
 body::-webkit-scrollbar {

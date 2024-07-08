@@ -1,7 +1,7 @@
 "use client"
 
 import { useGetFeaturedProducts } from "@/lib/hooks"
-import ProductCard from "../ProductCard"
+import ProductCard from "../Products/ProductCard"
 import SectionTitle from "../SectionTitle"
 import { ProductData } from "@/utils/types"
 

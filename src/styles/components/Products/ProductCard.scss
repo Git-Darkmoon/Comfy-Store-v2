@@ -1,5 +1,5 @@
-@use "../variables" as vars;
-@use "../mixins" as mixins;
+@use "../../variables" as vars;
+@use "../../mixins" as mixins;
 
 .product-card {
   background-color: vars.$clr-white;

@@ -1,0 +1,21 @@
+@use "../../variables" as vars;
+@use "../../mixins" as mixins;
+
+.notFound {
+  @include mixins.flexy(center, center, column);
+  gap: vars.$gutter-l;
+  padding-block: vars.$gutter-xl;
+  padding-inline: vars.$padding-x;
+
+  &__link {
+    color: vars.$clr-primary;
+    font-size: vars.$fs-0;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    @include mixins.my_transition(color);
+    &:hover {
+      color: vars.$clr-secondary;
+    }
+  }
+}

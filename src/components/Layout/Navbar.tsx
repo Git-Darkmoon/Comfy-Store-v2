@@ -1,11 +1,11 @@
 "use client"
 
 import { logoutUser } from "@/lib/features/user/userSlice"
-import { useAppDispatch } from "@/lib/hooks"
-import { useLocalStorage } from "@/lib/utils"
+import { useAppDispatch, useAppSelector } from "@/lib/hooks"
 import { ROUTES_NAME, ROUTES_PATH } from "@/utils/routes"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
+import { useEffect } from "react"
 import toast from "react-hot-toast"
 import { CiLogout } from "react-icons/ci"
 
@@ -29,12 +29,9 @@ const NavbarElements = [
 ]
 
 function Navbar() {
-  // const { user } = useAppSelector((state) => state.user)
-
   const dispatch = useAppDispatch()
   const router = useRouter()
-
-  const [user, setUser] = useLocalStorage("user", null)
+  const { user } = useAppSelector((state) => state.user)
 
   const handleLogout = () => {
     // dispatch(clearCart()) TO-DO
@@ -42,6 +39,10 @@ function Navbar() {
     toast.success("Logged Out")
     router.push("/")
   }
+
+  useEffect(() => {
+    console.log(user)
+  }, [user])
 
   return (
     <nav className="navbar">
@@ -62,8 +63,7 @@ function Navbar() {
         <div className="navbar__iconsContainer">
           {user ? (
             <>
-              {/* <p className="navbar__loggedUser">{user?.user?.username}</p> */}
-              <p className="navbar__loggedUser">Pepito</p>
+              <p className="navbar__loggedUser">{user?.user?.username}</p>
               <button className="navbar__registerBtn" onClick={handleLogout}>
                 Logout
                 <CiLogout className="navbar__logoutIcon" />

@@ -1,4 +1,6 @@
+import Loader from "@/components/Loader"
+
 function loading() {
-  return <div>loading...</div>
+  return <Loader />
 }
 export default loading

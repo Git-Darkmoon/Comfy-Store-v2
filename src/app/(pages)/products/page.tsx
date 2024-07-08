@@ -1,6 +1,8 @@
 "use client"
 
-import ProductCard from "@/components/ProductCard"
+import Loader from "@/components/Loader"
+import ProductCard from "@/components/Products/ProductCard"
+import Filters from "@/components/Products/Filters"
 import { useAppSelector, useGetProducts } from "@/lib/hooks"
 import { type ProductData } from "@/utils/types"
 
@@ -9,7 +11,7 @@ function ProductsPage() {
   const { user } = useAppSelector((state) => state.user)
 
   if (isLoading) {
-    return <p>Loading...</p>
+    return <Loader />
   }
   if (isError) {
     return <p>Something went wrong</p>
@@ -25,7 +27,7 @@ function ProductsPage() {
 
   return (
     <section className="products">
-      <aside className="products__filters">algo</aside>
+      <Filters />
       <main className="products__container">
         {AllProductsResponse?.data?.map((eachProduct: ProductData) => {
           return <ProductCard key={eachProduct.id} {...eachProduct} />

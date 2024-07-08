@@ -1,26 +1,32 @@
+"use client"
+
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
-import {
-  loginCredentials,
-  userLoginAPIResponse,
-  type User,
-} from "../../../utils/types"
+import { loginCredentials, userLoginAPIResponse } from "../../../utils/types"
 import { loginUserRequest } from "@/services/comfy"
 import toast from "react-hot-toast"
-import { redirect } from "next/navigation"
+import { deleteCookie, getCookie, setCookie } from "cookies-next"
 
 type userState = {
   user: userLoginAPIResponse | null
   isLoading: boolean
 }
 
+const getFromLocalStorage = (): userLoginAPIResponse | null => {
+  const user = getCookie("user")
+  if (user) {
+    return JSON.parse(user)
+  }
+  return null
+}
+
 const initialUserState: userState = {
-  user: null,
+  user: getFromLocalStorage(),
   isLoading: false,
 }
 
 export const makeUserLogin = createAsyncThunk(
   "user/loginUser",
-  async (credentials: loginCredentials, { rejectWithValue }) => {
+  async (credentials: loginCredentials) => {
     try {
       const response = await loginUserRequest(credentials)
       return response.data
@@ -38,7 +44,7 @@ const userSlice = createSlice({
   reducers: {
     logoutUser: (state) => {
       state.user = null
-      localStorage.removeItem("user")
+      deleteCookie("user")
     },
   },
   extraReducers: (builder) => {
@@ -49,7 +55,7 @@ const userSlice = createSlice({
       .addCase(makeUserLogin.fulfilled, (state, action) => {
         const credentials: loginCredentials & userLoginAPIResponse =
           action?.payload
-        localStorage.setItem("user", JSON.stringify(credentials))
+        setCookie("user", JSON.stringify(credentials))
         state.user = credentials
 
         state.isLoading = false

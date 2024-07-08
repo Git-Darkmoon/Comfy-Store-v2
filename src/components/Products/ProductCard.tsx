@@ -1,3 +1,4 @@
+import { formatPrice } from "@/utils/functions"
 import { ProductData } from "@/utils/types"
 import Image from "next/image"
 import Link from "next/link"
@@ -17,7 +18,7 @@ function ProductCard({ id, attributes }: ProductData) {
           loading="lazy"
         />
         <h3 className="product-card__name">{title}</h3>
-        <p className="product-card__price">${price}</p>
+        <p className="product-card__price">{formatPrice(price)}</p>
       </Link>
     </article>
   )

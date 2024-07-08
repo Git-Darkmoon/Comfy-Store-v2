@@ -2,12 +2,12 @@ import Link from "next/link"
 
 function NotFoundPage() {
   return (
-    <main className="not-found">
+    <main className="notFound">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         data-name="Layer 1"
-        width="860.13137"
-        height="571.14799"
+        width="760"
+        height="470"
         viewBox="0 0 860.13137 571.14799"
       >
         <path
@@ -156,7 +156,10 @@ function NotFoundPage() {
         />
       </svg>
       <p>
-        This page does not exist. <Link href="/">Go back to home</Link>
+        This page does not exist.{" "}
+        <Link className="notFound__link" href="/">
+          Go back to home
+        </Link>
       </p>
     </main>
   )
