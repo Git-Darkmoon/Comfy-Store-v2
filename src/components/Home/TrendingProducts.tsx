@@ -5,7 +5,7 @@ import ProductCard from "../Products/ProductCard"
 import SectionTitle from "../SectionTitle"
 import { ProductData } from "@/utils/types"
 
-function TrendingProducts() {
+export function TrendingProducts() {
   const { data, isLoading, isError } = useGetFeaturedProducts()
 
   if (isLoading) {
@@ -27,4 +27,3 @@ function TrendingProducts() {
     </section>
   )
 }
-export default TrendingProducts

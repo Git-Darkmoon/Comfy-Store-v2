@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-function Hero() {
+export function Hero() {
   return (
     <section className="hero">
       <Image
@@ -21,4 +21,3 @@ function Hero() {
     </section>
   )
 }
-export default Hero

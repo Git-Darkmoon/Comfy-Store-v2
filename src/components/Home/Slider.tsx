@@ -36,7 +36,7 @@ const SliderData: SliderCardProps[] = [
   },
 ]
 
-function Slider() {
+export function Slider() {
   return (
     <section className="carousel">
       {SliderData.map((sliderItem) => {
@@ -45,4 +45,3 @@ function Slider() {
     </section>
   )
 }
-export default Slider

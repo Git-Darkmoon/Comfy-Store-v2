@@ -33,7 +33,7 @@ const benefitsData: benefitsProps[] = [
   },
 ]
 
-function Benefits() {
+export function Benefits() {
   return (
     <section className="benefits">
       <SectionTitle title="Why choose us" subtitle="Shop your way" />
@@ -45,4 +45,3 @@ function Benefits() {
     </section>
   )
 }
-export default Benefits

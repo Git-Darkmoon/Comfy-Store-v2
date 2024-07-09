@@ -40,7 +40,7 @@ const allTestimonials: Testimonial[] = [
   },
 ]
 
-function Testimonials() {
+export function Testimonials() {
   return (
     <section className="testimonials">
       <SectionTitle subtitle="some of our clients" title="Testimonials" />
@@ -52,4 +52,3 @@ function Testimonials() {
     </section>
   )
 }
-export default Testimonials
