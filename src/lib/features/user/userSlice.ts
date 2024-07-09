@@ -11,16 +11,16 @@ type userState = {
   isLoading: boolean
 }
 
-const getFromLocalStorage = (): userLoginAPIResponse | null => {
-  const user = getCookie("user")
-  if (user) {
-    return JSON.parse(user)
-  }
-  return null
-}
+// const getFromLocalStorage = (): userLoginAPIResponse | null => {
+//   const user = getCookie("user")
+//   if (user) {
+//     return JSON.parse(user)
+//   }
+//   return null
+// }
 
 const initialUserState: userState = {
-  user: getFromLocalStorage(),
+  user: null,
   isLoading: false,
 }
 
@@ -42,6 +42,9 @@ const userSlice = createSlice({
   name: "user",
   initialState: initialUserState,
   reducers: {
+    setUser: (state, action) => {
+      state.user = action.payload
+    },
     logoutUser: (state) => {
       state.user = null
       deleteCookie("user")
@@ -68,5 +71,5 @@ const userSlice = createSlice({
   },
 })
 
-export const { logoutUser } = userSlice.actions
+export const { setUser, logoutUser } = userSlice.actions
 export const userReducer = userSlice.reducer

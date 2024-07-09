@@ -5,20 +5,29 @@ import Hero from "@/components/Home/Hero"
 import Slider from "@/components/Home/Slider"
 import Testimonials from "@/components/Home/Testimonials"
 import TrendingProducts from "@/components/Home/TrendingProducts"
-import { useAppSelector } from "@/lib/hooks"
+import { setUser } from "@/lib/features/user/userSlice"
+import { useAppDispatch, useAppSelector } from "@/lib/hooks"
+import { userLoginAPIResponse } from "@/utils/types"
+import { getCookie } from "cookies-next"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 
 function Home() {
   const router = useRouter()
   const { user } = useAppSelector((state) => state.user)
+  const dispatch = useAppDispatch()
+
+  const getFromLocalStorage = (): userLoginAPIResponse | null => {
+    const user = getCookie("user")
+    if (user) {
+      return JSON.parse(user)
+    }
+    return null
+  }
 
   useEffect(() => {
-    if (!user) {
-      router.push("/login")
-    }
-    router.push("/")
-  }, [user, router])
+    dispatch(setUser(getFromLocalStorage()))
+  }, [])
 
   return (
     <>
