@@ -2,7 +2,7 @@ function Filters() {
   return (
     <aside className="products__filters">
       <input
-        type="text"
+        type="search"
         className="products__search"
         placeholder="Search"
         name="SearchProduct"
@@ -11,14 +11,14 @@ function Filters() {
       />
 
       <h3>Category</h3>
-      <ul>
-        <li>All</li>
-        <li>Office</li>
-        <li>Office</li>
-        <li>Office</li>
-        <li>Office</li>
-        <li>Office</li>
-      </ul>
+      <select name="category" className="products__categorySelector">
+        <option value="all">All</option>
+        <option value="tables">Tables</option>
+        <option value="chairs">Chairs</option>
+        <option value="kids">Kids</option>
+        <option value="sofas">Sofas</option>
+        <option value="beds">Beds</option>
+      </select>
       <h3>Company</h3>
       <select name="" className="products__companySelector">
         <option value="all">All</option>
@@ -51,7 +51,10 @@ function Filters() {
       <label htmlFor="freeShipping">Free Shipping</label>
       <input type="checkbox" name="freeShipping" id="freeShipping" />
       <br />
-      <button>Clear Filters</button>
+      <button className="products__searchBtn products__btn">Search</button>
+      <button className="products__clearBtn products__btn">
+        Clear Filters
+      </button>
     </aside>
   )
 }

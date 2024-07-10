@@ -1,17 +1,62 @@
 @use "../../variables" as vars;
 @use "../../mixins" as mixins;
 
+.filters__container {
+  position: sticky;
+  top: 3rem;
+  height: fit-content;
+}
+
 .products {
   display: flex;
   margin: vars.$gutter-2xl auto;
   padding-inline: vars.$padding-x;
-  gap: vars.$gutter-l;
+  gap: vars.$gutter-xl;
 
   &__container {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: vars.$gutter-l;
-    padding-block: vars.$gutter-s;
+    // padding-block: vars.$gutter-s;
+  }
+
+  &__filters {
+  }
+  &__search {
+    width: 100%;
+    padding-inline: vars.$gutter-s;
+    padding-block: 0.3rem;
+    border: 1px solid vars.$clr-gray;
+    border-radius: vars.$border-radius;
+    font-size: vars.$fs-1;
+  }
+
+  &__btn {
+    width: 100%;
+    border-radius: vars.$border-radius;
+    padding-block: 0.3rem;
+    font-size: vars.$fs-1;
+    @include mixins.my_transition(background-color);
+  }
+
+  &__searchBtn {
+    background-color: vars.$clr-primary;
+    color: vars.$clr-white;
+    margin-block: vars.$gutter-s;
+
+    &:hover {
+      background-color: vars.$clr-secondary;
+    }
+  }
+
+  &__clearBtn {
+    border: 2px solid vars.$clr-primary;
+    background-color: transparent;
+    color: vars.$clr-primary;
+
+    &:hover {
+      background-color: vars.$clr-secondary;
+    }
   }
 }

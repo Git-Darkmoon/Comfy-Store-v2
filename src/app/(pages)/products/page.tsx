@@ -27,7 +27,9 @@ function ProductsPage() {
 
   return (
     <section className="products">
-      <Filters />
+      <div className="filters__container">
+        <Filters />
+      </div>
       <main className="products__container">
         {AllProductsResponse?.data?.map((eachProduct: ProductData) => {
           return <ProductCard key={eachProduct.id} {...eachProduct} />
