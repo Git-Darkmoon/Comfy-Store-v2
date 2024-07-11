@@ -9,6 +9,7 @@
 
 .products {
   display: flex;
+
   margin: vars.$gutter-2xl auto;
   padding-inline: vars.$padding-x;
   gap: vars.$gutter-xl;
@@ -21,15 +22,34 @@
     // padding-block: vars.$gutter-s;
   }
 
-  &__filters {
+  &__filters form {
+    @include mixins.flexy(flex-start, flex-start, column);
+    gap: vars.$gutter-s;
   }
   &__search {
     width: 100%;
     padding-inline: vars.$gutter-s;
     padding-block: 0.3rem;
-    border: 1px solid vars.$clr-gray;
+    border: 1px solid vars.$clr-primary;
     border-radius: vars.$border-radius;
     font-size: vars.$fs-1;
+    color: vars.$clr-primary;
+    background-color: vars.$clr-white;
+  }
+
+  &__select {
+    border: 1px solid vars.$clr-primary;
+    border-radius: vars.$border-radius;
+    padding-inline: vars.$gutter-s;
+    padding-block: 0.3rem;
+    font-size: vars.$fs-0;
+    background-color: vars.$clr-white;
+    cursor: pointer;
+    color: vars.$clr-primary;
+
+    &:focus-visible {
+      outline: 2px solid vars.$clr-primary;
+    }
   }
 
   &__btn {
@@ -43,7 +63,6 @@
   &__searchBtn {
     background-color: vars.$clr-primary;
     color: vars.$clr-white;
-    margin-block: vars.$gutter-s;
 
     &:hover {
       background-color: vars.$clr-secondary;

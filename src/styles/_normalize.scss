@@ -27,6 +27,12 @@ input {
   outline: none;
 }
 
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"] {
+  accent-color: vars.$clr-primary;
+}
+
 button {
   border: none;
   outline: none;
